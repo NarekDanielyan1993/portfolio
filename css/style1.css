@@ -1,0 +1,422 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+p {
+    margin-bottom: 0!important;
+}
+
+.col-xl-12, {
+    padding: 0!important;
+}
+
+.container-fluid {
+    padding: 0!important;
+}
+
+textarea {
+    resize: none;
+}
+
+input[type="submit"] {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #bbb;
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
+
+input:not([type="submit"]):focus, textarea:focus {
+    background-color: #ddd;
+    border: none;
+}
+
+.scroll-top-button {
+    position: fixed;
+    display: none;
+    right: 20px;
+    bottom: 20px;
+    padding: 8px 16px;
+    background-color: #bbb;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+    transition: 5s;
+}
+
+.scroll-top-button .arrow-up {
+    display: inline-block;
+    padding: 3px;
+    border-color: #000000;
+    border-style: solid;
+    border-width: 3px 0 0 3px;
+    transform: rotate(45deg);
+    z-index: 1;
+}
+
+header {
+   background:  url('../image/xmember-login-page.jpg.pagespeed.ic.fq4Ilew4Uo.jpg') no-repeat center; 
+   background-size: cover;
+   background-attachment: fixed; 
+} 
+
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: none;
+    left: 0;
+    top: 0;
+    z-index: 2;
+}
+
+.popup {
+    position: absolute; 
+    max-width: 400px;
+    left: 35%;
+    top: 10%;
+    animation: zoom 1s;
+    z-index: 1;
+}
+
+@keyframes zoom {
+    from {transform: scale(0);}
+    to {transform: scale(1);}
+}
+
+.close-popup {
+    position: absolute;
+    top: 15px;
+    right: 22px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.close-popup::after {
+    content: " ";
+    position: absolute;
+    border: 1px solid #000000;
+    height: 22px;
+    top: 0;
+    right: 11px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+.close-popup::before {
+    content: " ";
+    position: absolute;
+    height: 22px;
+    border: 1px solid #000000;
+    top: 0;
+    right: 11px;
+    transform: rotate(-45deg);
+    cursor: pointer;
+}
+
+ .popup_contact-form label {
+    margin-top: 20px;
+    margin-bottom: 2px;
+}
+
+.popup_contact-form {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+}
+
+.popup_contact-form input, textarea {
+    width: 100%;
+    border: 1px solid lightblue;
+    border-radius: 6px;
+}
+
+.header_title {
+    padding: 280px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header_social {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 1px;
+    margin: auto;
+    z-index: 1;
+    padding: 30px;
+}
+
+.header_social .fab {
+    display: block;
+    width: 30px;
+    margin-bottom: 6px;
+    padding: 5px 1px;
+    text-align: center;
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+}
+
+.header_social .fab:hover {
+    cursor: pointer;
+    background-color: aqua;
+    color: #000000;
+    transition: 1s;
+    transform: scale(1.5, 1.5);
+}
+
+header .header_image img {
+    width: 160px;
+    height: auto;
+    border: 2px solid lightblue;
+    border-radius: 80px;
+    position: absolute;
+    top: -80px;
+    left: 0;
+    right: 0;
+    margin: auto
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    transition: 0.3s;
+}
+
+.nav-item:hover, .nav-link:hover, input[type=submit]:hover {
+    background: #1029bc!important;
+    color: #ffffff!important;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.navbar .open-popup {
+    position: relative;
+    display: inline-block;
+    margin-left: 1%;
+    padding: 0!important;
+}
+ 
+.navbar .open-popup .button {
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+}
+
+.open-popup .tooltips {
+    visibility: hidden;
+    position: absolute;
+    display: inline-block;
+    top: 40px;
+    left: -15px;
+    width: 120px;
+    padding: 2px 5px;
+    border-radius: 6px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.9s;
+}
+
+.open-popup .tooltips::after {
+    content: " ";
+    position: absolute;
+    left: 45%;
+    bottom: 100%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #555 transparent;
+}
+
+.open-popup:hover .tooltips {
+    visibility: visible;
+    opacity: 1;
+}
+
+/*section 1*/
+
+
+.section_title {
+    padding: 200px 0 20px 0;
+}
+
+.timeline {
+    position: relative;
+    margin: 40px auto;
+    overflow: hidden;
+}
+
+.timeline .row {
+    position: relative;
+    padding: 15px 0;
+}
+
+.timeline .timeline_cicle { 
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+div .circle {
+    margin-left: 2%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color:aqua;
+    z-index: 1;
+    
+}
+
+.timeline::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background-color: silver;
+    opacity: 0.5
+}
+ 
+/*section 2 */
+
+.skills-background-image {
+    background: url('../image/backgroundImage.jpg') no-repeat center;
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 500px;
+}
+
+.skillbar-container {    
+    padding: 100px 0;
+}
+
+.skillbar-container .skillbar {
+    position: relative;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+}
+
+ .skillbar-title {
+    width: 20px;
+    background-color: rgba(221, 221, 204);
+    color: black;
+    font-size: 1.1rem;
+    text-align: center;
+    z-index: 1;
+}
+
+.skillbar-bar-background{
+    width: 0!important;
+    background-color: rgba(221, 221, 204);
+}
+
+.skillbar-bar .skillbar-bar-percent {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    color: #000;
+    font-size: 16px;
+    z-index: 2;
+}
+
+/*
+section 3
+*/
+
+.contacts-section {
+    position: relative;
+}
+
+.myContacts {
+    background: url(../image/backgroundImage3.jpeg) no-repeat center;
+    background-size: cover;
+    min-height: 500px;
+    padding: 0!important;
+    margin: 0!important;
+    z-index: 1;
+}
+
+.myContacts .contacts {
+    padding: 160px 0px;
+    color: #ffffff;
+}
+
+.contacts-information  {
+    display: flex;
+    flex-direction: column;  
+}
+
+.myContacts h4 {
+    position: relative;
+    padding-bottom: 20px; 
+    margin-bottom: 0;
+}
+
+.myContacts h4::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 90%;
+    height: 10px;
+    background-color: aqua;
+    border-radius: 3px;
+}
+
+
+.contacts-information .phone, .email {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 40px;
+    font-size: 1.4rem;
+}
+
+.contacts-information span {
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 30px;
+}
+
+.contact-form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contact-form input:not([type="submit"]), textarea {
+    display: flex;
+    flex-grow: 1;
+    margin: 30px 20px 0 0;
+    border: none;
+    border-bottom: 2px solid rgba(46, 73, 117, 1);
+    border-radius: 3px;
+    color: white;
+}
+
+
+
+
+
+ 
